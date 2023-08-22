@@ -14,7 +14,7 @@ The application architecture uses AWS Lambda, Amazon API Gateway, Amazon DynamoD
 
 This tutorial is divided into five modules. Each module describes a scenario of what we're going to build and step-by-step directions to help you implement the architecture and verify your work.
 
-### Host a Static Website (15 minutes)
+### Host a Static Website
 
 Configure AWS Amplify to host the static resources for your web application with continuous deployment built in.
 
@@ -29,7 +29,7 @@ Configure AWS Amplify to host the static resources for your web application with
 9. Accept all default build settings by choosing **Next**.
 10. Review your changes and choose **Save and deploy**.
 
-### Manage Users (30 minutes)
+### Manage Users
 
 Create an Amazon Cognito user pool to manage your users' accounts.
 
@@ -45,7 +45,7 @@ Create an Amazon Cognito user pool to manage your users' accounts.
 10. Uncheck all options under Auth Flows Configuration.
 11. Choose **Create app client**.
 
-### Build a Serverless Backend (30 minutes)
+### Build a Serverless Backend
 
 Build a backend process for handling requests for your web application.
 
@@ -58,7 +58,7 @@ Build a backend process for handling requests for your web application.
 7. Expand Change default execution role and choose Use an existing role.
 8. From Existing role drop-down list choose `WildRydesLambda`.
 
-### Deploy a RESTful API (15 minutes)
+### Deploy a RESTful API
 
 Use Amazon API Gateway to expose the Lambda function you built in the previous module as a RESTful API.
 
