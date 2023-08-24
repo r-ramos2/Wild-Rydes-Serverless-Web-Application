@@ -66,14 +66,22 @@ Here, you'll develop the backend process to handle ride requests.
 
 ### Module 4: Deploy a RESTful API
 
-This module involves exposing your Lambda function as a RESTful API using Amazon API Gateway.
+Expose your Lambda function as a RESTful API using Amazon API Gateway.
+
+1. Sign in to the AWS Management Console.
+2. Search for **API Gateway** using the console search bar.
+3. Access the API Gateway dashboard and choose **Create API**.
+4. Choose **HTTP API** and click **Build**.
+5. Configure your API, create a resource, and define a method.
+6. Integrate the method with your Lambda function.
+7. Deploy the API to make it accessible.
 
 ### Module 5: Terminate Resources
 
 Finally, learn how to clean up resources to avoid unnecessary costs.
 
 1. Sign in to the AWS Management Console.
-2. Search for each service used in the tutorial (Amplify Console, Cognito, DynamoDB, Lambda).
+2. Search for each service used in the tutorial (Amplify Console, Cognito, DynamoDB, Lambda, API Gateway).
 3. For each service:
    1. Access its dashboard.
    2. Locate tutorial-related resources.
