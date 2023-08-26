@@ -89,4 +89,4 @@ Finally, learn how to clean up resources to avoid unnecessary costs.
 
 ### Acknowledgment
 
-This tutorial is adapted from the [Build a Serverless Web Application with AWS Lambda, Amazon API Gateway, AWS Amplify, Amazon DynamoDB, and Amazon Cognito](https://aws.amazon.com/getting-started/hands-on/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/) tutorial provided by Amazon Web Services. I extend my gratitude to AWS for providing this valuable resource, which served as the foundation for the Wild Rydes Serverless Web Application tutorial.
+This tutorial is adapted from the [Build a Serverless Web Application with AWS Lambda, Amazon API Gateway, AWS Amplify, Amazon DynamoDB, and Amazon Cognito](https://aws.amazon.com/getting-started/hands-on/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/) tutorial provided by Amazon Web Services. We extend our gratitude to AWS for providing this valuable resource, which served as the foundation for the Wild Rydes Serverless Web Application tutorial.
