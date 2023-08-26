@@ -86,3 +86,7 @@ Finally, learn how to clean up resources to avoid unnecessary costs.
    1. Access its dashboard.
    2. Locate tutorial-related resources.
    3. Follow service-specific instructions to delete resources.
+
+### Acknowledgment
+
+This tutorial is adapted from the Build a Serverless Web Application with AWS Lambda, Amazon API Gateway, AWS Amplify, Amazon DynamoDB, and Amazon Cognito tutorial provided by Amazon Web Services. I extend my gratitude to AWS for providing this valuable resource, which served as the foundation for the Wild Rydes Serverless Web Application tutorial.
