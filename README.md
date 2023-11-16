@@ -34,13 +34,13 @@ Before you begin, ensure you have the following:
 ### Copy Website Files to Repository:
 
 1. Paste "aws s3 cp s3://wildrydes-us-west-2/WebApplication/1_StaticWebHosting/website ./ --recursive", ensuring the correct AWS Region, then hit Enter.
-2. Paste "git add .", then hit Enter.
-3. Paste "git commit -m "Initial commit" ", then hit Enter.
-4. Enter the following credentials:
+2. Type "git add .", then hit Enter.
+3. Type "git commit -m "Initial commit" ", then hit Enter.
+4. Paste and edit the following credentials:
    - "git config --global user.email "youremail@gmail.com""
    - "git config --global user.name "youradminusername""
    - "git config --global user.password "yourpassword""
-5. Paste "git push", then hit Enter.
+5. Type "git push", then hit Enter.
 6. Double-check by going back to the "wildrydes-site" repository, click on "Code," and verify CSS and js files.
 
 ## Step 3: Host Website with AWS Amplify
