@@ -78,8 +78,8 @@ Before you begin, ensure you have the following:
 
 1. Open AWS Console, then search for AWS Lambda Dashboard.
 2. Create a new function named "RequestUnicorn" with the existing role "WildRydesLambda".
-3. Update the function code with provided code and deploy (see .txt file).
-4. Test the function with a configured test event (see .txt file).
+3. Update the function code with provided code and deploy (refer to lamdbaFunction.js file).
+4. Test the function with a configured test event (refer to testEvent.json file).
 
 ### Verify DynamoDB:
 
