@@ -109,7 +109,7 @@ Before you begin, ensure you have the following:
 Empty and delete AWS Amplify, Amazon Cognito, Lambda, IAM, DynamoDB, API Gateway, CodeCommit, and CloudWatch.
 
 ## Conclusion
-In this project, we walked through the process of creating a robust, scalable, and user-friendly serverless web application using various AWS services. By following these steps, we have built an application that can efficiently handle user requests for unicorn rides, demonstrating the power and flexibility of serverless architectures to provide a seamless and interactive user experience. Feel free to message me with code improvement suggestions.
+In this project, we walked through the process of creating a robust, scalable, and user-friendly serverless web application using various AWS services. By following these steps, we have built an application that seamlessly and efficiently handles user requests for unicorn rides, demonstrating the power and flexibility of serverless architectures. Feel free to message me with code improvement suggestions.
 
 ## Acknowledgment
 
