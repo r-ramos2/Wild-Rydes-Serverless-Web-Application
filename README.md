@@ -27,7 +27,7 @@ Before you begin, ensure you have the following:
 4. Click on "Clone URL," then choose "Clone HTTPS."
 5. Open CloudShell terminal.
 6. Type "git clone" and paste the clone URL, then hit Enter.
-7. Enter User name (begins with TTTAdmin) and Password (paste once) from before.
+7. Enter User name (your admin username) and Password (paste once) from before.
 8. If successful, you should see an empty repository.
 9. Keep CloudShell open for the next step.
 
@@ -38,8 +38,8 @@ Before you begin, ensure you have the following:
 3. Paste "git commit -m "Initial commit" ", then hit Enter.
 4. Enter the following credentials:
    - "git config --global user.email "youremail@gmail.com""
-   - "git config --global user.name "TTTAdmin""
    - "git config --global user.name "youradminusername""
+   - "git config --global user.password "yourpassword""
 5. Paste "git push", then hit Enter.
 6. Double-check by going back to the "wildrydes-site" repository, click on "Code," and verify CSS and js files.
 
