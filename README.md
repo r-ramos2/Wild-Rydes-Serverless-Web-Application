@@ -90,7 +90,7 @@ Before you begin, ensure you have the following:
 1. Open AWS Console, then search for API Gateway.
 2. Create a new API named `WildRydesv with a resource "/ride" and a POST method.
 3. Configure the integration type as Lambda function and link to the "RequestUnicorn" function.
-4. Deploy the API to a new stage named `devv and note the Invoke URL.
+4. Deploy the API to a new stage named `dev` and note the Invoke URL.
 
 ### Update CodeCommit Configuration
 
