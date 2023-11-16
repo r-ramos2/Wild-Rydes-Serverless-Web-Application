@@ -19,7 +19,7 @@ Before you begin, ensure you have the following:
 
 ## Step 2: Configure CodeCommit and IAM Permissions
 
-### Configure CodeCommit Repository:
+### Configure CodeCommit Repository
 
 1. Open AWS Console, then search for CodeCommit.
 2. Click on Repositories in the left menu.
@@ -31,7 +31,7 @@ Before you begin, ensure you have the following:
 8. If successful, you should see an empty repository.
 9. Keep CloudShell open for the next step.
 
-### Copy Website Files to Repository:
+### Copy Website Files to Repository
 
 1. Paste "aws s3 cp s3://wildrydes-us-west-2/WebApplication/1_StaticWebHosting/website ./ --recursive", ensuring the correct AWS Region, then hit Enter.
 2. Type "git add .", then hit Enter.
@@ -68,20 +68,20 @@ Before you begin, ensure you have the following:
 2. Create a new table named "Rides" with a partition key "Rideid."
 3. Copy the Amazon Resource Name from Table settings.
 
-### Set Up IAM Role for Lambda:
+### Set Up IAM Role for Lambda
 
 1. Open AWS Console, then search for IAM Dashboard.
 2. Create a role named "WildRydesLambda" with "AWSLambdaBasicExecutionRole" permissions.
 3. Create an inline policy for DynamoDB write access.
 
-### Create Lambda Function (RequestUnicorn):
+### Create Lambda Function (RequestUnicorn)
 
 1. Open AWS Console, then search for AWS Lambda Dashboard.
 2. Create a new function named "RequestUnicorn" with the existing role "WildRydesLambda".
 3. Update the function code with provided code and deploy (refer to lamdbaFunction.js file).
 4. Test the function with a configured test event (refer to testEvent.json file).
 
-### Verify DynamoDB:
+### Verify DynamoDB
 
 1. Open DynamoDB, verify the presence of a new RideId under Items returned.
 
@@ -92,19 +92,19 @@ Before you begin, ensure you have the following:
 3. Configure the integration type as Lambda function and link to the "RequestUnicorn" function.
 4. Deploy the API to a new stage named "dev" and note the Invoke URL.
 
-### Update CodeCommit Configuration:
+### Update CodeCommit Configuration
 
 1. Open AWS Console, then search for CodeCommit.
 2. Edit config.js and ride.html in the "wildrydes-site" repository.
 3. Paste the Invoke URL from API Gateway.
 4. Commit the changes.
 
-### Final Steps:
+### Final Steps
 
 1. Verify your ArcGIS account is logged in.
 2. Refresh the WildRydes HTML page.
 
-## Cleanup:
+## Cleanup
 
 Empty and delete AWS Amplify, Amazon Cognito, Lambda, IAM, DynamoDB, API Gateway, CodeCommit, and CloudWatch.
 
