@@ -15,7 +15,7 @@ Before you begin, ensure you have the following:
 
 1. Open AWS Console, then search for CodeCommit.
 2. Click on "Create repository."
-3. For Repository name, use "wildrydes-site," then click "Create".
+3. For Repository name, use 'wildrydes-site', then click "Create".
 
 ## Step 2: Configure CodeCommit and IAM Permissions
 
