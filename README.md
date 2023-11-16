@@ -1,91 +1,110 @@
 # Wild Rydes Serverless Web Application
 
-Welcome to the Wild Rydes Serverless Web Application tutorial! This comprehensive guide will walk you through the process of creating a robust and user-friendly serverless web application that enables users to request unicorn rides from the Wild Rydes fleet. By utilizing AWS services such as AWS Lambda, Amazon API Gateway, Amazon DynamoDB, Amazon Cognito, and AWS Amplify Console, you'll build a scalable, secure, and efficient application.
-
-## Prerequisites
+Welcome to the Wild Rydes Serverless Web Application tutorial! This comprehensive guide will walk you through the process of creating a free, robust, and user-friendly serverless web application that enables users to request unicorn rides from the Wild Rydes fleet. By utilizing AWS services such as AWS Lambda, Amazon API Gateway, Amazon DynamoDB, Amazon Cognito, and AWS Amplify Console, you'll build a scalable, secure, and efficient application.
 
 Before you begin, ensure you have the following:
 
-- An AWS account: If you don't have one, you can sign up at https://aws.amazon.com/.
-- An ArcGIS account: To incorporate mapping functionality into your app, sign up at https://www.arcgis.com/.
+- An [AWS account](https://aws.amazon.com/): If you don't have one, you can sign up at https://aws.amazon.com/.
+- An [ArcGIS account](https://www.arcgis.com/): To incorporate mapping functionality into your app, sign up at https://www.arcgis.com/.
 - A text editor: For code editing and development.
 - A web browser: For testing and interacting with your application.
 
-If you're new to AWS, we recommend reviewing the "Setting Up Your AWS Environment" guide for a quick introduction.
+## Step 1: Set up Code Repository
 
-## Application Architecture
+1. Open AWS Console, then search for CodeCommit.
+2. Click on "Create repository."
+3. For Repository name, use "wildrydes-site," then click "Create."
 
-Our application leverages a powerful combination of AWS services:
+## Step 2: Configure CodeCommit and IAM Permissions
 
-- **AWS Lambda**: Serverless computing for executing code without provisioning or managing servers.
-- **Amazon API Gateway**: Create, deploy, and manage APIs for serverless backends.
-- **Amazon DynamoDB**: A NoSQL database for storing data in a scalable and flexible manner.
-- **Amazon Cognito**: User management and authentication service to secure your backend.
-- **AWS Amplify Console**: Continuous deployment and hosting for your web resources.
+### Configure CodeCommit Repository:
 
-This architecture ensures that your application is highly available, scalable, and secure.
+1. Open AWS Console, then search for CodeCommit.
+2. Click on Repositories in the left menu.
+3. Click on the "wildrydes-site" repository.
+4. Click on "Clone URL," then choose "Clone HTTPS."
+5. Open CloudShell terminal.
+6. Type "git clone" and paste the clone URL, then hit Enter.
+7. Enter User name (begins with TTTAdmin) and Password (paste once) from before.
+8. If successful, you should see an empty repository.
+9. Keep CloudShell open for the next step.
 
-## Tutorial Modules
+### Copy Website Files to Repository:
 
-This tutorial is organized into five comprehensive modules, each addressing a key aspect of building your Wild Rydes Serverless Web Application. By following these modules, you'll progressively build your application with detailed step-by-step instructions.
+1. Paste "aws s3 cp s3://wildrydes-us-west-2/WebApplication/1_StaticWebHosting/website ./ --recursive", ensuring the correct AWS Region, then hit Enter.
+2. Paste "git add .", then hit Enter.
+3. Paste "git commit -m "Initial commit" ", then hit Enter.
+4. Enter the following credentials:
+   - "git config --global user.email "youremail@gmail.com""
+   - "git config --global user.name "TTTAdmin""
+   - "git config --global user.name "youradminusername""
+5. Paste "git push", then hit Enter.
+6. Double-check by going back to the "wildrydes-site" repository, click on "Code," and verify CSS and js files.
 
-### Module 1: Host a Static Website
+## Step 3: Host Website with AWS Amplify
 
-In this module, you'll configure AWS Amplify to host your static web resources.
+1. Open AWS Console, then search for Amplify.
+2. Click on "New app," then select "Host web app," "AWS CodeCommit," and "Continue."
+3. Choose "wildrydes-site" under Recently updated repositories, then click "Next."
+4. Check the box to allow Amplify to automatically deploy all files hosted in your project root directory.
+5. Click "Next," then "Deploy."
+6. Wait for the Provision, Build, and Deploy checkmarks to turn green.
+7. Under master, click on the new link to access the deployed website.
 
-1. Sign in to the AWS Management Console.
-2. Search for **Amplify** using the console search bar.
-3. Choose **Get started** under Deploy.
-4. Select **Host web app** and connect your code repository (e.g., GitHub).
-5. Choose your repository and branch.
-6. Configure build settings and review your changes.
-7. Save and deploy your changes.
+## Step 4: Implement User Registration and Login
 
-### Module 2: Manage Users
+1. Open AWS Console, then search for Amazon Cognito.
+2. Click on "Create user pool."
+3. Configure user pool settings and client ID, then click "Create user pool."
+4. Save User pool ID and Client ID in a text editor.
+5. Update CodeCommit's js file with User pool ID, Client ID, and current region, then commit changes.
+6. After deployment, test the sign-in option and copy the authentication token to a text editor.
 
-This module focuses on setting up Amazon Cognito to manage user accounts.
+## Step 5 and Step 6: Implement Ride Sharing Functionality and Data Storage
 
-1. Sign in to the AWS Management Console.
-2. Search for **Cognito** using the console search bar.
-3. Access the Cognito dashboard and choose **Manage User Pools**.
-4. Create a new user pool (e.g., `WildRydes`).
-5. Review default settings and navigate to **App clients**.
-6. Add a new app client (e.g., `WildRydesWebApp`).
-7. Configure app client settings and create the app client.
+1. Open AWS Console, then search for DynamoDB.
+2. Create a new table named "Rides" with a partition key "Rideid."
+3. Copy the Amazon Resource Name from Table settings.
 
-### Module 3: Build a Serverless Backend
+### Set Up IAM Role for Lambda:
 
-Here, you'll develop the backend process to handle ride requests.
+1. Open AWS Console, then search for IAM Dashboard.
+2. Create a role named "WildRydesLambda" with "AWSLambdaBasicExecutionRole" permissions.
+3. Create an inline policy for DynamoDB write access.
 
-1. Sign in to the AWS Management Console.
-2. Search for **Lambda** using the console search bar.
-3. Access the Lambda dashboard and choose **Create function**.
-4. Choose **Author from scratch** and define a function name (e.g., `RequestUnicorn`).
-5. Select `Node.js` as the runtime.
-6. Use an existing role named `WildRydesLambda`.
+### Create Lambda Function (RequestUnicorn):
 
-### Module 4: Deploy a RESTful API
+1. Open AWS Console, then search for AWS Lambda Dashboard.
+2. Create a new function named "RequestUnicorn" with the existing role "WildRydesLambda."
+3. Update the function code with provided code and deploy.
+4. Test the function with a configured test event.
 
-Expose your Lambda function as a RESTful API using Amazon API Gateway.
+### Verify DynamoDB:
 
-1. Sign in to the AWS Management Console.
-2. Search for **API Gateway** using the console search bar.
-3. Access the API Gateway dashboard and choose **Create API**.
-4. Choose **HTTP API** and click **Build**.
-5. Configure your API, create a resource, and define a method.
-6. Integrate the method with your Lambda function.
-7. Deploy the API to make it accessible.
+1. Open DynamoDB, verify the presence of a new RideId under Items returned.
 
-### Module 5: Terminate Resources
+## Step 7: Configure API Gateway for Ride Sharing Functionality
 
-Finally, learn how to clean up resources to avoid unnecessary costs.
+1. Open AWS Console, then search for API Gateway.
+2. Create a new API named "WildRydes" with a resource "/ride" and a POST method.
+3. Configure the integration type as Lambda function and link to the "RequestUnicorn" function.
+4. Deploy the API to a new stage named "dev" and note the Invoke URL.
 
-1. Sign in to the AWS Management Console.
-2. Search for each service used in the tutorial (Amplify Console, Cognito, DynamoDB, Lambda, API Gateway).
-3. For each service:
-   1. Access its dashboard.
-   2. Locate tutorial-related resources.
-   3. Follow service-specific instructions to delete resources.
+### Update CodeCommit Configuration:
+
+1. Open AWS Console, then search for CodeCommit.
+2. Edit config.js and ride.html in the "wildrydes-site" repository.
+3. Paste the Invoke URL from API Gateway.
+4. Commit the changes.
+
+### Final Steps:
+
+1. Verify your ArcGIS account is logged in.
+2. Refresh the WildRydes HTML page.
+
+## Cleanup:
+
+Empty and delete AWS Amplify, Amazon Cognito, Lambda, IAM, DynamoDB, API Gateway, CodeCommit, and CloudWatch.
 
 ## Acknowledgment
 
