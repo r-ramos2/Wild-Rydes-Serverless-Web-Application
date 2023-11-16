@@ -2,6 +2,8 @@
 
 Welcome to the Wild Rydes Serverless Web Application tutorial! This comprehensive guide will walk you through the process of creating a free, robust, and user-friendly serverless web application that enables users to request unicorn rides from the Wild Rydes fleet. By utilizing AWS services such as AWS Lambda, Amazon API Gateway, Amazon DynamoDB, Amazon Cognito, and AWS Amplify Console, you'll build a scalable, secure, and efficient application.
 
+<img width="1427" alt="AUFHAIUFHAHDADALJDL" src="https://github.com/ocramos2/Wild-Rydes-Serverless-Web-Application/assets/90172092/2de1abf9-d3e3-4ebd-b91f-b1f8bff9f7d6">
+
 Before you begin, ensure you have the following:
 
 - An [AWS account](https://aws.amazon.com/): If you don't have one, you can sign up at https://aws.amazon.com/.
@@ -60,7 +62,7 @@ Before you begin, ensure you have the following:
 5. Update CodeCommit's js file with User pool ID, Client ID, and current region, then commit changes.
 6. After deployment, test the sign-in option and copy the authentication token to a text editor.
 
-## Step 5 and Step 6: Implement Ride Sharing Functionality and Data Storage
+## Steps 5 and 6: Implement Ride Sharing Functionality and Data Storage
 
 1. Open AWS Console, then search for DynamoDB.
 2. Create a new table named "Rides" with a partition key "Rideid."
