@@ -108,6 +108,9 @@ Before you begin, ensure you have the following:
 
 Empty and delete AWS Amplify, Amazon Cognito, Lambda, IAM, DynamoDB, API Gateway, CodeCommit, and CloudWatch.
 
+## Conclusion
+In this project, we walked through the process of creating a robust, scalable, and user-friendly serverless web application using various AWS services. By following these steps, we have built an application that can efficiently handle user requests for unicorn rides, demonstrating the power and flexibility of serverless architectures to provide a seamless and interactive user experience. Feel free to message me with code improvement suggestions.
+
 ## Acknowledgment
 
 This tutorial is adapted from the [Build a Serverless Web Application with AWS Lambda, Amazon API Gateway, AWS Amplify, Amazon DynamoDB, and Amazon Cognito](https://aws.amazon.com/getting-started/hands-on/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/) tutorial provided by Amazon Web Services. We extend our gratitude to AWS for providing this valuable resource, which served as the foundation for the Wild Rydes Serverless Web Application tutorial.
