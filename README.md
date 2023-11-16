@@ -15,7 +15,7 @@ Before you begin, ensure you have the following:
 
 1. Open AWS Console, then search for CodeCommit.
 2. Click on "Create repository."
-3. For Repository name, use 'wildrydes-site', then click "Create".
+3. For Repository name, use `wildrydes-site`, then click "Create".
 
 ## Step 2: Configure CodeCommit and IAM Permissions
 
@@ -65,19 +65,19 @@ Before you begin, ensure you have the following:
 ## Steps 5 and 6: Implement Ride Sharing Functionality and Data Storage
 
 1. Open AWS Console, then search for DynamoDB.
-2. Create a new table named "Rides" with a partition key "Rideid".
+2. Create a new table named `Rides` with a partition key `Rideid`.
 3. Copy the Amazon Resource Name from Table settings.
 
 ### Set Up IAM Role for Lambda
 
 1. Open AWS Console, then search for IAM Dashboard.
-2. Create a role named "WildRydesLambda" with "AWSLambdaBasicExecutionRole" permissions.
+2. Create a role named `WildRydesLambda` with `AWSLambdaBasicExecutionRole` permissions.
 3. Create an inline policy for DynamoDB write access.
 
 ### Create Lambda Function (RequestUnicorn)
 
 1. Open AWS Console, then search for AWS Lambda Dashboard.
-2. Create a new function named "RequestUnicorn" with the existing role "WildRydesLambda".
+2. Create a new function named `RequestUnicorn` with the existing role `WildRydesLambda`.
 3. Update the function code with provided code and deploy (refer to lamdbaFunction.js file).
 4. Test the function with a configured test event (refer to testEvent.json file).
 
@@ -88,9 +88,9 @@ Before you begin, ensure you have the following:
 ## Step 7: Configure API Gateway for Ride Sharing Functionality
 
 1. Open AWS Console, then search for API Gateway.
-2. Create a new API named "WildRydes" with a resource "/ride" and a POST method.
+2. Create a new API named `WildRydesv with a resource "/ride" and a POST method.
 3. Configure the integration type as Lambda function and link to the "RequestUnicorn" function.
-4. Deploy the API to a new stage named "dev" and note the Invoke URL.
+4. Deploy the API to a new stage named `devv and note the Invoke URL.
 
 ### Update CodeCommit Configuration
 
