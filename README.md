@@ -15,7 +15,7 @@ Before you begin, ensure you have the following:
 
 1. Open AWS Console, then search for CodeCommit.
 2. Click on "Create repository."
-3. For Repository name, use "wildrydes-site," then click "Create."
+3. For Repository name, use "wildrydes-site," then click "Create".
 
 ## Step 2: Configure CodeCommit and IAM Permissions
 
@@ -24,7 +24,7 @@ Before you begin, ensure you have the following:
 1. Open AWS Console, then search for CodeCommit.
 2. Click on Repositories in the left menu.
 3. Click on the "wildrydes-site" repository.
-4. Click on "Clone URL," then choose "Clone HTTPS."
+4. Click on "Clone URL," then choose "Clone HTTPS".
 5. Open CloudShell terminal.
 6. Type "git clone" and paste the clone URL, then hit Enter.
 7. Enter User name (your admin username) and Password (paste once) from before.
@@ -46,18 +46,18 @@ Before you begin, ensure you have the following:
 ## Step 3: Host Website with AWS Amplify
 
 1. Open AWS Console, then search for Amplify.
-2. Click on "New app," then select "Host web app," "AWS CodeCommit," and "Continue."
-3. Choose "wildrydes-site" under Recently updated repositories, then click "Next."
+2. Click on "New app," then select "Host web app," "AWS CodeCommit," and "Continue".
+3. Choose "wildrydes-site" under Recently updated repositories, then click "Next".
 4. Check the box to allow Amplify to automatically deploy all files hosted in your project root directory.
-5. Click "Next," then "Deploy."
+5. Click "Next," then "Deploy".
 6. Wait for the Provision, Build, and Deploy checkmarks to turn green.
 7. Under master, click on the new link to access the deployed website.
 
 ## Step 4: Implement User Registration and Login
 
 1. Open AWS Console, then search for Amazon Cognito.
-2. Click on "Create user pool."
-3. Configure user pool settings and client ID, then click "Create user pool."
+2. Click on "Create user pool".
+3. Configure user pool settings and client ID, then click "Create user pool".
 4. Save User pool ID and Client ID in a text editor.
 5. Update CodeCommit's js file with User pool ID, Client ID, and current region, then commit changes.
 6. After deployment, test the sign-in option and copy the authentication token to a text editor.
@@ -65,7 +65,7 @@ Before you begin, ensure you have the following:
 ## Steps 5 and 6: Implement Ride Sharing Functionality and Data Storage
 
 1. Open AWS Console, then search for DynamoDB.
-2. Create a new table named "Rides" with a partition key "Rideid."
+2. Create a new table named "Rides" with a partition key "Rideid".
 3. Copy the Amazon Resource Name from Table settings.
 
 ### Set Up IAM Role for Lambda
