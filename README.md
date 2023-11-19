@@ -1,6 +1,6 @@
 # Wild Rydes Serverless Web Application
 
-Welcome to the Wild Rydes Serverless Web Application tutorial! This comprehensive guide will walk you through the process of creating a free, robust, and user-friendly serverless web application that enables users to request unicorn rides from the Wild Rydes fleet. By utilizing AWS services such as AWS Lambda, Amazon API Gateway, Amazon DynamoDB, Amazon Cognito, and AWS Amplify Console, you'll build a scalable, secure, and efficient application.
+This comprehensive guide will walk you through the process of creating a free, robust, and user-friendly serverless web application that enables users to request unicorn rides from the Wild Rydes fleet. By utilizing AWS services such as AWS Lambda, Amazon API Gateway, Amazon DynamoDB, Amazon Cognito, and AWS Amplify Console, you'll build a scalable, secure, and efficient application.
 
 <img width="1427" alt="AUFHAIUFHAHDADALJDL" src="https://github.com/ocramos2/Wild-Rydes-Serverless-Web-Application/assets/90172092/2de1abf9-d3e3-4ebd-b91f-b1f8bff9f7d6">
 
