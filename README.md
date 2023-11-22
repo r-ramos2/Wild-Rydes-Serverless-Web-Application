@@ -22,51 +22,51 @@ Before you begin, ensure you have the following:
 ### Configure CodeCommit Repository
 
 1. Open AWS Console, then search for CodeCommit.
-2. Click on Repositories in the left menu.
+2. Click on "Repositories" in the left menu.
 3. Click on the "wildrydes-site" repository.
 4. Click on "Clone URL", then choose "Clone HTTPS".
 5. Open CloudShell terminal.
-6. Type `git clone` and paste the clone URL, then hit Enter.
-7. Enter User name (your admin username) and Password (paste once) from before.
+6. Type `git clone` and paste the clone URL, then hit "Enter".
+7. Enter User name (i.e. `your admin username`) and Password (paste once) from before.
 8. If successful, you should see an empty repository.
 9. Keep CloudShell open for the next step.
 
 ### Copy Website Files to Repository
 
-1. Paste `aws s3 cp s3://wildrydes-us-west-2/WebApplication/1_StaticWebHosting/website ./ --recursive`, ensuring the correct AWS Region, then hit Enter.
-2. Type `git add .`, then hit Enter.
-3. Type `git commit -m "Initial commit"`, then hit Enter.
+1. Paste `aws s3 cp s3://wildrydes-us-west-2/WebApplication/1_StaticWebHosting/website ./ --recursive`, ensuring the correct AWS Region, then hit "Enter".
+2. Type `git add .`, then hit "Enter".
+3. Type `git commit -m "Initial commit"`, then hit "Enter".
 4. Paste and edit the following credentials:
    - `git config --global user.email "youremail@gmail.com"`
    - `git config --global user.name "youradminusername"`
    - `git config --global user.password "yourpassword"`
-5. Type `git push`, then hit Enter.
-6. Double-check by going back to the "wildrydes-site" repository, click on "Code," and verify CSS and js files.
+5. Type `git push`, then hit "Enter".
+6. Double-check by going back to the "wildrydes-site" repository, click on "Code", and verify CSS and js files.
 
 ## Step 3: Host Website with AWS Amplify
 
 1. Open AWS Console, then search for Amplify.
-2. Click on "New app," then select "Host web app," "AWS CodeCommit," and "Continue".
+2. Click on "New app", then select "Host web app", "AWS CodeCommit", and "Continue".
 3. Choose "wildrydes-site" under Recently updated repositories, then click "Next".
 4. Check the box to allow Amplify to automatically deploy all files hosted in your project root directory.
 5. Click "Next," then "Deploy".
-6. Wait for the Provision, Build, and Deploy checkmarks to turn green.
-7. Under master, click on the new link to access the deployed website.
+6. Wait for the "Provision, Build, and Deploy" checkmarks to turn green.
+7. Under "master", click on the new link to access the deployed website.
 
 ## Step 4: Implement User Registration and Login
 
 1. Open AWS Console, then search for Amazon Cognito.
 2. Click on "Create user pool".
 3. Configure user pool settings and client ID, then click "Create user pool".
-4. Save User pool ID and Client ID in a text editor.
-5. Update CodeCommit's js file with User pool ID, Client ID, and current region, then commit changes.
+4. Save "User pool ID" and "Client ID" in a text editor.
+5. Update CodeCommit's js file with "User pool ID", "Client ID", and "current region", then commit changes.
 6. After deployment, test the sign-in option and copy the authentication token to a text editor.
 
 ## Steps 5 and 6: Implement Ride Sharing Functionality and Data Storage
 
 1. Open AWS Console, then search for DynamoDB.
 2. Create a new table named `Rides` with a partition key `Rideid`.
-3. Copy the Amazon Resource Name from Table settings.
+3. Copy the "Amazon Resource Name" from "Table settings".
 
 ### Set Up IAM Role for Lambda
 
@@ -78,8 +78,8 @@ Before you begin, ensure you have the following:
 
 1. Open AWS Console, then search for AWS Lambda Dashboard.
 2. Create a new function named `RequestUnicorn` with the existing role `WildRydesLambda`.
-3. Update the function code with provided code and deploy (refer to lamdbaFunction.js file).
-4. Test the function with a configured test event (refer to testEvent.json file).
+3. Update the function code with provided code and deploy (please refer to lamdbaFunction.js file).
+4. Test the function with a configured test event (please refer to testEvent.json file).
 
 ### Verify DynamoDB
 
@@ -88,15 +88,15 @@ Before you begin, ensure you have the following:
 ## Step 7: Configure API Gateway for Ride Sharing Functionality
 
 1. Open AWS Console, then search for API Gateway.
-2. Create a new API named `WildRydesv` with a resource "/ride" and a POST method.
+2. Create a new API named `WildRydesv` with a resource "/ride" and a "POST" method.
 3. Configure the integration type as Lambda function and link to the "RequestUnicorn" function.
-4. Deploy the API to a new stage named `dev` and note the Invoke URL.
+4. Deploy the API to a new stage named `dev` and save the "Invoke URL" in a text editor.
 
 ### Update CodeCommit Configuration
 
 1. Open AWS Console, then search for CodeCommit.
 2. Edit config.js and ride.html in the "wildrydes-site" repository.
-3. Paste the Invoke URL from API Gateway.
+3. Paste the "Invoke URL" from API Gateway.
 4. Commit the changes.
 
 ### Final Steps
