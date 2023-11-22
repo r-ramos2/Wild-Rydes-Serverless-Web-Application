@@ -27,7 +27,7 @@ Before you begin, ensure you have the following:
 4. Click on "Clone URL", then choose "Clone HTTPS".
 5. Open CloudShell terminal.
 6. Type `git clone` and paste the clone URL, then hit "Enter".
-7. Enter User name (i.e. `your admin username`) and Password (paste once) from before.
+7. Enter User name (i.e. `your admin username`) and Password (e.g. paste once) from before.
 8. If successful, you should see an empty repository.
 9. Keep CloudShell open for the next step.
 
