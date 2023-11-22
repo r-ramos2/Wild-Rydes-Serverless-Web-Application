@@ -14,7 +14,7 @@ Before you begin, ensure you have the following:
 ## Step 1: Set up Code Repository
 
 1. Open AWS Console, then search for CodeCommit.
-2. Click on "Create repository."
+2. Click on "Create repository".
 3. For Repository name, use `wildrydes-site`, then click "Create".
 
 ## Step 2: Configure CodeCommit and IAM Permissions
@@ -24,23 +24,23 @@ Before you begin, ensure you have the following:
 1. Open AWS Console, then search for CodeCommit.
 2. Click on Repositories in the left menu.
 3. Click on the "wildrydes-site" repository.
-4. Click on "Clone URL," then choose "Clone HTTPS".
+4. Click on "Clone URL", then choose "Clone HTTPS".
 5. Open CloudShell terminal.
-6. Type "git clone" and paste the clone URL, then hit Enter.
+6. Type `git clone` and paste the clone URL, then hit Enter.
 7. Enter User name (your admin username) and Password (paste once) from before.
 8. If successful, you should see an empty repository.
 9. Keep CloudShell open for the next step.
 
 ### Copy Website Files to Repository
 
-1. Paste "aws s3 cp s3://wildrydes-us-west-2/WebApplication/1_StaticWebHosting/website ./ --recursive", ensuring the correct AWS Region, then hit Enter.
-2. Type "git add .", then hit Enter.
-3. Type "git commit -m "Initial commit" ", then hit Enter.
+1. Paste `aws s3 cp s3://wildrydes-us-west-2/WebApplication/1_StaticWebHosting/website ./ --recursive`, ensuring the correct AWS Region, then hit Enter.
+2. Type `git add .`, then hit Enter.
+3. Type `git commit -m "Initial commit"`, then hit Enter.
 4. Paste and edit the following credentials:
-   - "git config --global user.email "youremail@gmail.com""
-   - "git config --global user.name "youradminusername""
-   - "git config --global user.password "yourpassword""
-5. Type "git push", then hit Enter.
+   - `git config --global user.email "youremail@gmail.com"`
+   - `git config --global user.name "youradminusername"`
+   - `git config --global user.password "yourpassword"`
+5. Type `git push`, then hit Enter.
 6. Double-check by going back to the "wildrydes-site" repository, click on "Code," and verify CSS and js files.
 
 ## Step 3: Host Website with AWS Amplify
@@ -88,7 +88,7 @@ Before you begin, ensure you have the following:
 ## Step 7: Configure API Gateway for Ride Sharing Functionality
 
 1. Open AWS Console, then search for API Gateway.
-2. Create a new API named `WildRydesv with a resource "/ride" and a POST method.
+2. Create a new API named `WildRydesv` with a resource "/ride" and a POST method.
 3. Configure the integration type as Lambda function and link to the "RequestUnicorn" function.
 4. Deploy the API to a new stage named `dev` and note the Invoke URL.
 
